@@ -1,10 +1,11 @@
 import pandas as pd
+import psycopg2
+from config import host, user, password, db_name
 
-path_file = r'/home/an/Загрузки/MSP/msp.csv'
+path_file = r'/home/an/dl/MSP/msp.csv'
 wFile = pd.read_csv(path_file,nrows=100)
-# print(wFile.head(10))
-print(wFile.to_csv(None))
+# print(wFile.head(10))     # выводит заголовок таблицы
+print(wFile.to_csv(None))   # выводит полную таблицу
 
-print(wFile.info())
-#asda
-print('q')
+print(wFile.info())         # информация по полям
+

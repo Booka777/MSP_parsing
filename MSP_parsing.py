@@ -43,7 +43,7 @@ def getFromXML(xml_file):
             total_list.append(client)
     return total_list
 
-path_to_XML = "/home/an/Загрузки/MSP/XML/"
+path_to_XML = "/home/an/dl/MSP/XML/"
 # path_to_XML = "C:/_STORE/MSP/xml/"
 files_list = os.listdir(path_to_XML)
 
@@ -62,7 +62,7 @@ df = pd.DataFrame(newlist,
                            'Наименование']
                   )
 # df.to_csv('C:/_STORE/MSP/msp.csv')
-df.to_csv('/home/an/Загрузки/MSP/msp.csv',index=False)
+df.to_csv('/home/an/dl/MSP/msp.csv',index=False)
 # df = pd.DataFrame(newlist)      #если добавить .T после скобки, таблица транспонируется
 # df.to_excel(excel_writer='C:/_STORE/MSP/msp.xlsx')
 # df.to_excel(excel_writer='/home/an/Загрузки/МСП/msp.xlsx')
