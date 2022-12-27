@@ -6,4 +6,4 @@ wFile = pd.read_csv(path_file,nrows=100)
 print(wFile.to_csv(None))
 
 print(wFile.info())
-#
+#asda
