@@ -7,3 +7,4 @@ print(wFile.to_csv(None))
 
 print(wFile.info())
 #asda
+print('q')
