@@ -9,3 +9,6 @@ print(wFile.to_csv(None))   # выводит полную таблицу
 
 print(wFile.info())         # информация по полям
 
+conn = psycopg2.connect(database=db_name, host=host, user=user, password=password)
+conn.autocommit = True
+cursor = conn.cursor()

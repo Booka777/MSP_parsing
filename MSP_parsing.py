@@ -2,7 +2,7 @@
 import os
 import xml.etree.ElementTree as ET
 import pandas as pd
-
+from config import columns_msp_csv
 
 def getFromXML(xml_file):
     tree = ET.ElementTree(file=xml_file)
@@ -57,10 +57,7 @@ newlist = []
 for i in tList:
     for j in i:
         newlist.append(j)
-df = pd.DataFrame(newlist,
-                  columns=['ДатаВклМСП', 'ВидСубМСП', 'КатСубМСП', 'ПризНовМСП', 'СведСоцПред', 'ССЧР', 'ИНН', 'ОГРН',
-                           'Наименование']
-                  )
+df = pd.DataFrame(newlist, columns=columns_msp_csv)
 # df.to_csv('C:/_STORE/MSP/msp.csv')
 df.to_csv('/home/an/dl/MSP/msp.csv',index=False)
 # df = pd.DataFrame(newlist)      #если добавить .T после скобки, таблица транспонируется
