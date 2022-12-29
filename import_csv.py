@@ -28,6 +28,7 @@ sql = '''COPY msp_transit
     DELIMITER ','
     CSV HEADER'''
 cursor.execute(sql)
+>>>>>>>>> Temporary merge branch 2
 
 # Заливка данных в основную таблицу
 # 1. Обновление данных по записям, которые отсутствуют в исходнике - исключены из реестра МСП
