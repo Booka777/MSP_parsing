@@ -12,7 +12,7 @@ cursor.execute(sql)
 
 sql = "CREATE TABLE IF NOT EXISTS msp (id serial PRIMARY KEY, msp_adding_dt date, msp_type_flg smallint, msp_category_flg smallint, " \
       "new_msp_flg smallint, social_company_flg smallint, employees_cnt integer, inn_num varchar(12), " \
-      "ogrn_num varchar(15), client_nm varchar(150), effective_from_dt date, effective_to_dt date, is_active_flg smallint )"
+      "ogrn_num varchar(15), client_nm varchar(150), effective_from_dt date, effective_to_dt date, is_active_flg smallint, processed_dttm timestamp )"
 cursor.execute(sql)
 
 cursor.close()

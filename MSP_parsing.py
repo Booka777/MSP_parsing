@@ -27,7 +27,12 @@ def getFromXML(xml_file):
                 if  sub_child.tag == "ОргВклМСП":
                     client.append(sub_child.get('ИННЮЛ'))
                     client.append(sub_child.get('ОГРН'))
-                    client.append(sub_child.get('НаимОргСокр'))
+                    client_nm = sub_child.get('НаимОргСокр')
+                    if client_nm != None:
+                        # if len(client_nm) > 150:
+                        client_nm = client_nm[:150]
+                    client.append(client_nm)
+                    # print(client_nm)
                 elif sub_child.tag == "ИПВклМСП":
                     client.append(sub_child.get('ИННФЛ'))
                     client.append(sub_child.get('ОГРНИП'))
@@ -38,7 +43,7 @@ def getFromXML(xml_file):
                     except: fio = fio
                     try: fio += ' ' + sub_child[0].attrib['Отчество']
                     except: fio = fio
-                    client.append(fio)
+                    client.append(fio[0:150])
 
             total_list.append(client)
     return total_list
